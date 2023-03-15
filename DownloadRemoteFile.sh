@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# git status && git add . && git commit -m "更新代码" && git push origin DownloadFile
+# git status && git add . && git commit -m "更新代码" && git push origin DownloadFile || git push
 
 echo "###" && echo "### 当前路径及文件 ###" && echo "###"
 pwd
