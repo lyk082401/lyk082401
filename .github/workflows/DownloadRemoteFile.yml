@@ -27,6 +27,8 @@ jobs:
            echo "###" && echo "### 安装依赖包 ###" && echo "###"
            type curl || sudo apt-get install curl -y
            type wget || sudo apt-get install wget -y
+      - name: "创建 artifacts 目录"
+        run: mkdir -p "artifacts"
       - name: "运行脚本"
         run: bash "DownloadRemoteFile.sh"
       - name: "上传 artifacts 文件"
@@ -39,8 +41,6 @@ jobs:
            untracked: false
            paths: |
               - "${{ github.workspace }}/artifacts/"
-      - name: "创建 artifacts 目录"
-        run: mkdir -p "artifacts"
       - name: "打印环境变量"
         env:
            GITHUB_CONTEXT: ${{ toJson(github) }}
