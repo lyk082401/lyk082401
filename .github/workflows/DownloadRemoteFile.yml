@@ -38,7 +38,7 @@ jobs:
       - name: "运行脚本"
         run: bash "DownloadRemoteFile.sh"
       - name: "上传 artifacts 文件"
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
            name: archives
            when: always
@@ -46,7 +46,7 @@ jobs:
            public: true
            untracked: false
            paths: |
-              - "${{ github.workspace }}/artifacts/"
+              "${{ github.workspace }}/artifacts/"
       - name: "打印环境变量"
         env:
            GITHUB_CONTEXT: ${{ toJson(github) }}
