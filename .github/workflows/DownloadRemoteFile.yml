@@ -72,6 +72,7 @@ jobs:
            echo "###" && echo "### MATRIX_CONTEXT ###" && echo "###"
            echo "${MATRIX_CONTEXT}"
    other:
+      needs: build
       name: "其他"
       runs-on: ubuntu-latest
       strategy:
