@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
  build:
-  name: Build System env
+   name: Build System env
    runs-on: ubuntu-latest
    steps:
     - name: Checkout
