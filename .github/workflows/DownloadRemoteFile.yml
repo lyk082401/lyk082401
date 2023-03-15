@@ -41,10 +41,8 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
            name: "archives-${{ matrix.java }}"
-           when: always
-           expire_in: never
-           public: true
-           untracked: false
+           if-no-files-found: warn
+           retention-days: 90
            paths: |
               "${{ github.workspace }}/artifacts/"
       - name: "打印环境变量"
