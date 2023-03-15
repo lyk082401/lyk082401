@@ -22,6 +22,9 @@ env
 echo "###" && echo "### 环境变量 set ###" && echo "###"
 set
 
+echo "###" && echo "### 代码块 ###" && echo "###"
+curl -sSLO "https://github.com/lyk082401/lyk082401/archive/refs/heads/main.zip"
+mv main.zip artifact/
 exit 0
 
 # 关闭sendmail的服务
