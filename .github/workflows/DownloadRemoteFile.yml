@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Script
-        run: bash main.sh
+        run: bash DownloadRemoteFile.sh
       - name: Artifact
         uses: actions/upload-artifact@v2
         with:

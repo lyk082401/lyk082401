@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
+# git status && git add . && git commit -m "更新代码" && git push origin DownloadFile
 
 type curl
+type wget
+
 sudo apt-get upgrade -y
 sudo apt-get install wget curl -y
+
 export
 env
+
 exit 0
+
 # 关闭sendmail的服务
 service sendmail status
 service sendmail stop
