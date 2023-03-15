@@ -2,12 +2,14 @@
 
 # git status && git add . && git commit -m "更新代码" && git push origin DownloadFile
 
+mkdir -p "artifacts"
+
 echo "###" && echo "### 当前路径及文件 ###" && echo "###"
 pwd
 ls -1a
 
 echo "###" && echo "### 更新依赖包 ###" && echo "###"
-sudo apt-get upgrade -y
+sudo apt-get update && sudo apt-get upgrade -y
 
 echo "###" && echo "### 安装依赖包 ###" && echo "###"
 type curl || sudo apt-get install curl -y
@@ -24,7 +26,7 @@ set
 
 echo "###" && echo "### 代码块 ###" && echo "###"
 curl -sSLO "https://github.com/lyk082401/lyk082401/archive/refs/heads/main.zip"
-mv main.zip artifact/
+mv main.zip artifacts/
 exit 0
 
 # 关闭sendmail的服务

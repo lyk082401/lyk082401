@@ -3,15 +3,15 @@ on: [push]
 
 jobs:
    build:
-      name: Build System env
+      name: Build system env
       runs-on: ubuntu-latest
       steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Run Script
+      - name: Run script
         run: bash DownloadRemoteFile.sh
       - name: Artifact
         uses: actions/upload-artifact@v2
         with:
-           name: artifact
-           path: ${{ github.workspace }}/artifact/
+           name: Upload artifacts
+           path: ${{ github.workspace }}/artifacts/
