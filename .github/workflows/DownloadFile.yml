@@ -5,16 +5,17 @@ jobs:
   build:
     name: Build System env
     runs-on: ubuntu-latest
-    container: debian:buster
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
+      - name: curl
+        uses: wei/curl@master
+          with:
+             arg: -sSLO "https://github.com/lyk082401/lyk082401/archive/refs/heads/main.zip"
       - name: Run Script
         run: bash main.sh
-
       - name: Artifact
         uses: actions/upload-artifact@v2
-        with:
-          name: artifact
-          path: ${{ github.workspace }}/artifact/
+         with:
+             name: artifact
+             path: ${{ github.workspace }}/artifact/
