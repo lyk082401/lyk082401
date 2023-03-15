@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
 type curl
-
+sudo apt-get upgrade -y
+sudo apt-get install wget curl -y
+export
+env
+exit 0
 # 关闭sendmail的服务
 service sendmail status
 service sendmail stop
