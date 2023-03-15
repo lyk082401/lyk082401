@@ -1,7 +1,8 @@
 name: "下载网络文件"
 on:
    push:
-      branches: ["DownloadRemoteFile"]
+      branches: |
+         "DownloadRemoteFile"
 
 jobs:
    build:
