@@ -2,8 +2,6 @@
 
 # git status && git add . && git commit -m "更新代码" && git push origin DownloadFile
 
-mkdir -p "artifacts"
-
 echo "###" && echo "### 当前路径及文件 ###" && echo "###"
 pwd
 ls -1a
