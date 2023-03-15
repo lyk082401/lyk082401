@@ -2,16 +2,16 @@ name: Download Remote File
 on: [push]
 
 jobs:
-  build:
-    name: Build System env
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Run Script
-        run: bash main.sh
-      - name: Artifact
-        uses: actions/upload-artifact@v2
-         with:
-             name: artifact
-             path: ${{ github.workspace }}/artifact/
+ build:
+  name: Build System env
+   runs-on: ubuntu-latest
+   steps:
+    - name: Checkout
+    uses: actions/checkout@v2
+    - name: Run Script
+    run: bash main.sh
+    - name: Artifact
+    uses: actions/upload-artifact@v2
+    with:
+     name: artifact
+     path: ${{ github.workspace }}/artifact/
