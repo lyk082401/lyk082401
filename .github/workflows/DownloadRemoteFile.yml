@@ -9,11 +9,11 @@ jobs:
       name: "构建系统环境 "
       runs-on: ubuntu-latest
       steps:
-      - name: Checkout
+      - name: "检出"
         uses: actions/checkout@v3
         with:
            fetch-depth: 0
-      - name: Set up JDK 17
+      - name: "设置 JDK 17"
         uses: actions/setup-java@v3
         with:
            java-version: "17"
@@ -29,7 +29,7 @@ jobs:
            type wget || sudo apt-get install wget -y
       - name: "运行脚本"
         run: bash "DownloadRemoteFile.sh"
-      - name: Upload artifacts
+      - name: "上传 artifacts"
         uses: actions/upload-artifact@v2
         with:
            name: archives
@@ -39,7 +39,7 @@ jobs:
            untracked: false
            paths: |
               - ${{ github.workspace }}/artifacts/
-      - name: Create artifacts dir
+      - name: "创建 artifacts 目录"
         run: mkdir -p "artifacts"
       - name: "打印环境变量"
         env:
