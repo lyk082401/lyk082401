@@ -2,16 +2,24 @@
 
 # git status && git add . && git commit -m "更新代码" && git push origin DownloadFile
 
-echo "### 更新环境 ###"
+echo "###" && echo "### 当前路径及文件 ###" && echo "###"
+pwd
+ls -1a
+
+echo "###" && echo "### 更新依赖包 ###" && echo "###"
 sudo apt-get upgrade -y
-echo "### 安装依赖包 ###"
+
+echo "###" && echo "### 安装依赖包 ###" && echo "###"
 type curl || sudo apt-get install curl -y
 type wget || sudo apt-get install wget -y
-echo "### 环境 export ###"
+
+echo "###" && echo "### 环境变量 export ###" && echo "###"
 export
-echo "### 环境 env ###"
+
+echo "###" && echo "### 环境变量 env ###" && echo "###"
 env
-echo "### 环境 set ###"
+
+echo "###" && echo "### 环境变量 set ###" && echo "###"
 set
 
 exit 0
