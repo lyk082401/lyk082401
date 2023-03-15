@@ -8,16 +8,23 @@ jobs:
    build:
       name: "构建系统环境 "
       runs-on: ubuntu-latest
+      strategy:
+         matrix:
+            java: [ "8", "11", "17", "19" ]
       steps:
       - name: "检出"
         uses: actions/checkout@v3
         with:
            fetch-depth: 0
-      - name: "设置 JDK 17"
+      - name: "设置 JDK ${{ matrix.java }}"
         uses: actions/setup-java@v3
         with:
-           java-version: "17"
-           distribution: "temurin"
+           distribution: "oracle"
+           java-version: "${{ matrix.java }}"
+           cache: "gradle"
+      - run: ./gradlew --version
+      - run: gradle --version
+      - run: java --version
       - name: "更新依赖包"
         run: |
            echo "###" && echo "### 更新依赖包 ###" && echo "###"
