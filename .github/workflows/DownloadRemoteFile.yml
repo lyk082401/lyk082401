@@ -18,11 +18,11 @@ jobs:
            java-version: "17"
            distribution: "temurin"
       - name: "更新依赖包"
-      - run: |
+        run: |
            echo "###" && echo "### 更新依赖包 ###" && echo "###"
            sudo apt-get update && sudo apt-get upgrade -y
       - name: "安装依赖包"
-      - run: |
+        run: |
            echo "###" && echo "### 安装依赖包 ###" && echo "###"
            type curl || sudo apt-get install curl -y
            type wget || sudo apt-get install wget -y
@@ -38,7 +38,7 @@ jobs:
            untracked: false
            paths: ["${{ github.workspace }}/artifacts/"]
       - name: Create artifacts dir
-      - run: mkdir -p "artifacts"
+        run: mkdir -p "artifacts"
       - name: "打印环境变量"
         env:
            GITHUB_CONTEXT: ${{ toJson(github) }}
@@ -47,7 +47,7 @@ jobs:
            RUNNER_CONTEXT: ${{ toJson(runner) }}
            STRATEGY_CONTEXT: ${{ toJson(strategy) }}
            MATRIX_CONTEXT: ${{ toJson(matrix) }}
-      - run: |
+        run: |
            echo "###" && echo "### 环境变量 export ###" && echo "###"
            export
            echo "###" && echo "### 环境变量 env ###" && echo "###"
