@@ -29,7 +29,7 @@ jobs:
            type wget || sudo apt-get install wget -y
       - name: "运行脚本"
         run: bash "DownloadRemoteFile.sh"
-      - name: "上传 artifacts"
+      - name: "上传 artifacts 文件"
         uses: actions/upload-artifact@v2
         with:
            name: archives
@@ -38,7 +38,7 @@ jobs:
            public: true
            untracked: false
            paths: |
-              - ${{ github.workspace }}/artifacts/
+              - "${{ github.workspace }}/artifacts/"
       - name: "创建 artifacts 目录"
         run: mkdir -p "artifacts"
       - name: "打印环境变量"
