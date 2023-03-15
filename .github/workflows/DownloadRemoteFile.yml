@@ -40,7 +40,7 @@ jobs:
       - name: "上传 artifacts 文件"
         uses: actions/upload-artifact@v3
         with:
-           name: archives
+           name: "archives-${{ matrix.java }}"
            when: always
            expire_in: never
            public: true
