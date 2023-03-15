@@ -5,7 +5,7 @@ on:
 
 jobs:
    build:
-      name: "构建系统环境"
+      name: "构建系统环境"o
       runs-on: ubuntu-latest
       steps:
       - name: Checkout
