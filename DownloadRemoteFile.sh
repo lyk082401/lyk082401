@@ -1,14 +1,18 @@
 #!/usr/bin/env bash
+
 # git status && git add . && git commit -m "更新代码" && git push origin DownloadFile
 
-type curl
-type wget
-
+echo "### 更新环境 ###"
 sudo apt-get upgrade -y
-sudo apt-get install wget curl -y
-
+echo "### 安装依赖包 ###"
+type curl || sudo apt-get install curl -y
+type wget || sudo apt-get install wget -y
+echo "### 环境 export ###"
 export
+echo "### 环境 env ###"
 env
+echo "### 环境 set ###"
+set
 
 exit 0
 
