@@ -4,12 +4,14 @@
 
 echo "###" && echo "### 当前路径及文件 ###" && echo "###"
 pwd
-ls -al
+ls -al .*
+ls -al *
 
 echo "###" && echo "### 代码块 ###" && echo "###"
 curl -sSLO "https://github.com/lyk082401/lyk082401/archive/refs/heads/main.zip"
 mv main.zip artifacts/
-ls -al
+ls -al .*
+ls -al *
 
 exit 0
 
