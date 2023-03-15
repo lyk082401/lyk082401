@@ -1,5 +1,7 @@
 name: "下载网络文件"
-on: [push]
+on:
+   push:
+      branches: ["DownloadRemoteFile"]
 
 jobs:
    build:
@@ -7,12 +9,12 @@ jobs:
       runs-on: ubuntu-latest
       steps:
          - name: Checkout
-           uses: actions/checkout@v2
+         uses: actions/checkout@v2
            with:
               fetch-depth: 0
               
          - name: Set up JDK 17
-           uses: actions/setup-java@v3
+         uses: actions/setup-java@v3
            with:
               java-version: "17"
               distribution: "temurin"
