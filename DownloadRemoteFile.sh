@@ -6,25 +6,9 @@ echo "###" && echo "### 当前路径及文件 ###" && echo "###"
 pwd
 ls -1a
 
-echo "###" && echo "### 更新依赖包 ###" && echo "###"
-sudo apt-get update && sudo apt-get upgrade -y
-
-echo "###" && echo "### 安装依赖包 ###" && echo "###"
-type curl || sudo apt-get install curl -y
-type wget || sudo apt-get install wget -y
-
 echo "###" && echo "### 代码块 ###" && echo "###"
 curl -sSLO "https://github.com/lyk082401/lyk082401/archive/refs/heads/main.zip"
 mv main.zip artifacts/
-
-echo "###" && echo "### 环境变量 export ###" && echo "###"
-export
-
-echo "###" && echo "### 环境变量 env ###" && echo "###"
-env
-
-echo "###" && echo "### 环境变量 set ###" && echo "###"
-set
 
 exit 0
 
