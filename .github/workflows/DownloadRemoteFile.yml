@@ -36,7 +36,8 @@ jobs:
            expire_in: never
            public: true
            untracked: false
-           paths: [${{ github.workspace }}/artifacts/]
+           paths: |
+              - ${{ github.workspace }}/artifacts/
       - name: Create artifacts dir
         run: mkdir -p "artifacts"
       - name: "打印环境变量"
