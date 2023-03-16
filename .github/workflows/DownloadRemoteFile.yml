@@ -89,4 +89,4 @@ jobs:
         with:
            name: "archives-${{ matrix.java }}"
            path: "${{ github.workspace }}/archives/"
-      - run: la -al
+      - run: ls -al
